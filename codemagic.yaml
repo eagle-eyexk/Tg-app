@@ -3,7 +3,7 @@ workflows:
     name: TiliGo iOS - Build & Publish
     max_build_duration: 60
     integrations:
-      app_store_connect: tiligo_app_store_connection
+      app_store_connect: tiligo_asc
     environment:
       ios_signing:
         distribution_type: app_store
@@ -68,5 +68,3 @@ workflows:
         auth: integration
         submit_to_app_store: true
         release_type: MANUAL
-        app_store_version_info:
-          sku: "tiligo001"
