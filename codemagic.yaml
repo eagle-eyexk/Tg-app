@@ -1,0 +1,72 @@
+workflows:
+  tiligo-ios-workflow:
+    name: TiliGo iOS - Build & Publish
+    max_build_duration: 60
+    integrations:
+      app_store_connect: tiligo_app_store_connection
+    environment:
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: com.tiligo.tiligo
+      vars:
+        APP_ID: "6777145744"
+        APP_SKU: "tiligo001"
+        BUNDLE_ID: "com.tiligo.tiligo"
+        XCODE_WORKSPACE: "App.xcworkspace"
+        XCODE_SCHEME: "App"
+      node: 20
+      xcode: latest
+      cocoapods: default
+    triggering:
+      events:
+        - push
+      branch_patterns:
+        - pattern: main
+          include: true
+    scripts:
+      - name: Install npm dependencies
+        script: |
+          cd mobile-app
+          npm install
+
+      - name: Add iOS platform (if not already present)
+        script: |
+          cd mobile-app
+          if [ ! -d "ios" ]; then
+            npx cap add ios
+          fi
+          npx cap sync ios
+
+      - name: Set bundle identifier and version
+        script: |
+          cd mobile-app/ios/App
+          agvtool new-version -all $(( $(app-store-connect get-latest-app-store-build-number "$APP_ID") + 1 )) || true
+
+      - name: Install CocoaPods dependencies
+        script: |
+          cd mobile-app/ios/App
+          pod install
+
+      - name: Set up code signing settings on Xcode project
+        script: |
+          cd mobile-app/ios/App
+          xcode-project use-profiles
+
+      - name: Build ipa for distribution
+        script: |
+          cd mobile-app/ios
+          xcode-project build-ipa \
+            --workspace "App/App.xcworkspace" \
+            --scheme "App"
+
+    artifacts:
+      - mobile-app/ios/**/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+
+    publishing:
+      app_store_connect:
+        auth: integration
+        submit_to_app_store: true
+        release_type: MANUAL
+        app_store_version_info:
+          sku: "tiligo001"
