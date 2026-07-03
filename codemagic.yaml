@@ -29,7 +29,7 @@ workflows:
       - name: Sync Capacitor web assets
         script: |
           cd mobile-app
-          npx cap sync ios
+          ./node_modules/.bin/cap sync ios
 
       - name: Install CocoaPods dependencies
         script: |
