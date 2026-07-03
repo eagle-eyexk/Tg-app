@@ -1,7 +1,7 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.tiligo.tiligo',
+  appId: 'com.tiligo.tilgo',
   appName: 'TiliGo',
   webDir: 'www',
   server: {

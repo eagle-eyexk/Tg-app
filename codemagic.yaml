@@ -7,10 +7,10 @@ workflows:
     environment:
       ios_signing:
         distribution_type: app_store
-        bundle_identifier: com.tiligo.tiligo
+        bundle_identifier: com.tiligo.tilgo
       vars:
         APP_ID: "6777145744"
-        BUNDLE_ID: "com.tiligo.tiligo"
+        BUNDLE_ID: "com.tiligo.tilgo"
       node: 20
       xcode: latest
       cocoapods: default
