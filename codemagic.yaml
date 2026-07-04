@@ -6,8 +6,10 @@ workflows:
       app_store_connect: tiligo_asc
     environment:
       ios_signing:
-        distribution_type: app_store
-        bundle_identifier: com.tiligo.tilgo
+        provisioning_profiles:
+          - "m"
+        certificates:
+          - "tiligo_ios"
       xcode: latest
       vars:
         APP_ID: "6777145744"
