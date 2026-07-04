@@ -1,0 +1,22 @@
+Using Xcode 16.4 (16F6)
+Check TiliGo.xcodeproj build settings
+Execute "xcodebuild -project /Users/builder/clone/mobile-app-swift/TiliGo.xcodeproj -scheme TiliGo -config Release -showBuildSettings"
+
+Archive TiliGo.xcodeproj
+Execute "xcodebuild -project /Users/builder/clone/mobile-app-swift/TiliGo.xcodeproj -scheme TiliGo -config Release -archivePath /Users/builder/clone/build/ios/xcarchive/TiliGo_zwu9ts1w.xcarchive archive COMPILER_INDEX_STORE_ENABLE=NO DEVELOPMENT_TEAM=H4QUDPK7S3 'CODE_SIGN_IDENTITY=Apple Distribution' CODE_SIGN_STYLE=Manual"
+
+▸ Compiling LaunchScreen.storyboard
+Failed to archive /Users/builder/clone/mobile-app-swift/TiliGo.xcodeproj. The following build commands failed:
+
+CompileStoryboard /Users/builder/clone/mobile-app-swift/TiliGo/LaunchScreen.storyboard (in target 'TiliGo' from project 'TiliGo')
+	...
+	/Users/builder/clone/mobile-app-swift/TiliGo/LaunchScreen.storyboard: error: The document "LaunchScreen.storyboard" could not be opened. The operation couldn’t be completed. (com.apple.InterfaceBuilder error -1.)
+	Recovery Suggestion: Check the console log for additional information.
+	CompileAssetCatalogVariant thinned /Users/builder/Library/Developer/Xcode/DerivedData/TiliGo-codfkcufpbnxvpeuliwqrlrqnykf/Build/Intermediates.noindex/ArchiveIntermediates/TiliGo/InstallationBuildProductsLocation/Applications/TiliGo.app /Users/builder/clone/mobile-app-swift/TiliGo/Assets.xcassets (in target 'TiliGo' from project 'TiliGo')
+	cd /Users/builder/clone/mobile-app-swift
+	/Applications/Xcode-16.4.app/Contents/Developer/usr/bin/actool /Users/builder/clone/mobile-app-swift/TiliGo/Assets.xcassets --compile /Users/builder/Library/Developer/Xcode/DerivedData/TiliGo-codfkcufpbnxvpeuliwqrlrqnykf/Build/Intermediates.noindex/ArchiveIntermediates/TiliGo/IntermediateBuildFilesPath/TiliGo.build/Release-iphoneos/TiliGo.build/assetcatalog_output/thinned --output-format human-readable-text --notices --warnings --export-dependency-info /Users/builder/Library/Developer/Xcode/DerivedData/TiliGo-codfkcufpbnxvpeuliwqrlrqnykf/Build/Intermediates.noindex/ArchiveIntermediates/TiliGo/IntermediateBuildFilesPath/TiliGo.build/Release-iphoneos/TiliGo.build/assetcatalog_dependencies_thinned --output-partial-info-plist /Users/builder/Library/Developer/Xcode/DerivedData/TiliGo-codfkcufpbnxvpeuliwqrlrqnykf/Build/Intermediates.noindex/ArchiveIntermediates/TiliGo/IntermediateBuildFilesPath/TiliGo.build/Release-iphoneos/TiliGo.build/assetcatalog_generated_info.plist_thinned --app-icon AppIcon --accent-color AccentColor --compress-pngs --enable-on-demand-resources YES --development-region en --target-device iphone --target-device ipad --minimum-deployment-target 15.0 --platform iphoneos
+	note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'TiliGo' from project 'TiliGo')
+
+
+Build failed :|
+Step 5 script `Build IPA` exited with status code 65
