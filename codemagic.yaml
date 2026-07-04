@@ -8,12 +8,12 @@ workflows:
       ios_signing:
         distribution_type: app_store
         bundle_identifier: com.tiligo.tilgo
+      xcode: latest
       vars:
         APP_ID: "6777145744"
         BUNDLE_ID: "com.tiligo.tilgo"
         XCODE_PROJECT: "mobile-app-swift/TiliGo.xcodeproj"
         XCODE_SCHEME: "TiliGo"
-      xcode: latest
     triggering:
       events:
         - push
@@ -24,18 +24,21 @@ workflows:
       - name: Increment build number
         script: |
           LATEST=$(app-store-connect get-latest-app-store-build-number "$APP_ID" 2>/dev/null || echo "0")
-          cd mobile-app-swift
+          cd "$CM_BUILD_DIR/mobile-app-swift"
           agvtool new-version -all $(( LATEST + 1 ))
 
       - name: Set up code signing
         script: |
-          xcode-project use-profiles
+          xcode-project use-profiles \
+            --project "$CM_BUILD_DIR/$XCODE_PROJECT" \
+            --scheme "$XCODE_SCHEME"
 
       - name: Build IPA
         script: |
           xcode-project build-ipa \
-            --project "$XCODE_PROJECT" \
-            --scheme "$XCODE_SCHEME"
+            --project "$CM_BUILD_DIR/$XCODE_PROJECT" \
+            --scheme "$XCODE_SCHEME" \
+            --config Release
 
     artifacts:
       - build/ios/ipa/*.ipa
