@@ -1,0 +1,42 @@
+
+[notice] A new release of pip is available: 24.2 -> 26.1.2
+[notice] To update, run: pip install --upgrade pip
+
+============================================================
+  Updating app info (category + copyright)
+============================================================
+Traceback (most recent call last):
+  File "/Users/builder/.pyenv/versions/3.12.7/lib/python3.12/site-packages/jwt/algorithms.py", line 515, in prepare_key
+    crypto_key = load_pem_public_key(key_bytes)  # type: ignore[assignment]
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Unable to load PEM file. See https://cryptography.io/en/latest/faq/#why-can-t-i-import-my-pem-file for more details. MalformedFraming
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/builder/clone/mobile-app-swift/asc_metadata.py", line 86, in <module>
+    infos = get(f"/apps/{APP_ID}/appInfos")["data"]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/builder/clone/mobile-app-swift/asc_metadata.py", line 59, in get
+    r = requests.get(f"{BASE_URL}{path}", headers=headers(), params=params or {})
+                                                  ^^^^^^^^^
+  File "/Users/builder/clone/mobile-app-swift/asc_metadata.py", line 55, in headers
+    return {"Authorization": f"Bearer {make_token()}", "Content-Type": "application/json"}
+                                       ^^^^^^^^^^^^
+  File "/Users/builder/clone/mobile-app-swift/asc_metadata.py", line 51, in make_token
+    return jwt.encode(payload, PRIVATE_KEY, algorithm="ES256", headers={"kid": KEY_ID})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/builder/.pyenv/versions/3.12.7/lib/python3.12/site-packages/jwt/api_jwt.py", line 78, in encode
+    return api_jws.encode(
+           ^^^^^^^^^^^^^^^
+  File "/Users/builder/.pyenv/versions/3.12.7/lib/python3.12/site-packages/jwt/api_jws.py", line 170, in encode
+    key = alg_obj.prepare_key(key)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/builder/.pyenv/versions/3.12.7/lib/python3.12/site-packages/jwt/algorithms.py", line 517, in prepare_key
+    crypto_key = load_pem_private_key(key_bytes, password=None)  # type: ignore[assignment]
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: ('Could not deserialize key data. The data may be in an incorrect format, the provided password may be incorrect, it may be encrypted with an unsupported algorithm, or it may be an unsupported key type (e.g. EC curves with explicit parameters).', [<OpenSSLError(code=503841036, lib=60, reason=524556, reason_text=unsupported)>])
+
+
+Build failed :|
+Step 6 script `Upload App Store metadata and screenshots` exited with status code 1
