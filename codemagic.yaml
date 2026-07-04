@@ -32,8 +32,7 @@ workflows:
       - name: Set up code signing
         script: |
           xcode-project use-profiles \
-            --project "$CM_BUILD_DIR/$XCODE_PROJECT" \
-            --scheme "$XCODE_SCHEME"
+            --project "$CM_BUILD_DIR/$XCODE_PROJECT"
 
       - name: Build IPA
         script: |
