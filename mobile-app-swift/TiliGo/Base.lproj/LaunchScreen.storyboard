@@ -18,30 +18,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO"
-                                   contentMode="left" horizontalHuggingPriority="251"
-                                   verticalHuggingPriority="251" text="TiliGo"
-                                   textAlignment="center" lineBreakMode="middleTruncation"
-                                   baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO"
-                                   translatesAutoresizingMaskIntoConstraints="NO" id="GJd-Yh-RWb">
-                                <rect key="frame" x="0.0" y="388" width="393" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom"
-                                       customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO"
+                                       contentMode="scaleAspectFit" horizontalHuggingPriority="251"
+                                       verticalHuggingPriority="251"
+                                       image="SplashLogo"
+                                       translatesAutoresizingMaskIntoConstraints="NO" id="IMG-logo">
+                                <rect key="frame" x="97" y="286" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="foa-cs-br4"/>
+                                    <constraint firstAttribute="width" constant="200" id="w1"/>
+                                    <constraint firstAttribute="height" constant="200" id="h1"/>
                                 </constraints>
-                            </label>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
-                        <color key="backgroundColor" red="0.22" green="1.0" blue="0.42" alpha="1" colorSpace="custom"
-                               customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.08" green="0.08" blue="0.12" alpha="1"
+                               colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="GJd-Yh-RWb" firstAttribute="centerX"
-                                        secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="moa-c2-u7t"/>
-                            <constraint firstItem="GJd-Yh-RWb" firstAttribute="centerY"
-                                        secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Y3B-4O-Cce"/>
+                            <constraint firstItem="IMG-logo" firstAttribute="centerX"
+                                        secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="cx1"/>
+                            <constraint firstItem="IMG-logo" firstAttribute="centerY"
+                                        secondItem="Ze5-6b-2t3" secondAttribute="centerY"
+                                        constant="-40" id="cy1"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -50,4 +47,7 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="SplashLogo" width="1024" height="1024"/>
+    </resources>
 </document>
