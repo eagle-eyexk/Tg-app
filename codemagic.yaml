@@ -11,9 +11,9 @@ workflows:
       vars:
         APP_ID: "6777145744"
         BUNDLE_ID: "com.tiligo.tilgo"
-      node: 20
+        XCODE_PROJECT: "mobile-app-swift/TiliGo.xcodeproj"
+        XCODE_SCHEME: "TiliGo"
       xcode: latest
-      cocoapods: default
     triggering:
       events:
         - push
@@ -21,41 +21,24 @@ workflows:
         - pattern: main
           include: true
     scripts:
-      - name: Install npm dependencies
-        script: |
-          cd mobile-app
-          npm install
-
-      - name: Sync Capacitor web assets
-        script: |
-          cd mobile-app
-          ./node_modules/.bin/cap sync ios
-
-      - name: Install CocoaPods dependencies
-        script: |
-          cd mobile-app/ios/App
-          pod install
-
       - name: Increment build number
         script: |
           LATEST=$(app-store-connect get-latest-app-store-build-number "$APP_ID" 2>/dev/null || echo "0")
-          cd mobile-app/ios/App
+          cd mobile-app-swift
           agvtool new-version -all $(( LATEST + 1 ))
 
       - name: Set up code signing
         script: |
-          cd mobile-app/ios/App
           xcode-project use-profiles
 
       - name: Build IPA
         script: |
-          cd mobile-app/ios
           xcode-project build-ipa \
-            --workspace "App/App.xcworkspace" \
-            --scheme "App"
+            --project "$XCODE_PROJECT" \
+            --scheme "$XCODE_SCHEME"
 
     artifacts:
-      - mobile-app/ios/build/ios/ipa/*.ipa
+      - build/ios/ipa/*.ipa
       - /tmp/xcodebuild_logs/*.log
       - $HOME/Library/Logs/gym/*.log
 
