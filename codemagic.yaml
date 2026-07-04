@@ -10,7 +10,7 @@ workflows:
           - "m"
         certificates:
           - "tiligo_ios"
-      xcode: 16.4
+      xcode: latest
       vars:
         APP_ID: "6777145744"
         BUNDLE_ID: "com.tiligo.tilgo"

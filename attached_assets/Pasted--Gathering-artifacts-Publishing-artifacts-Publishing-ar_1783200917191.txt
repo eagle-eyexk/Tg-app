@@ -1,0 +1,46 @@
+
+== Gathering artifacts ==
+
+== Publishing artifacts ==
+
+Publishing artifact TiliGo.ipa
+Publishing artifact TiliGo_App_7_artifacts.zip
+Publishing TiliGo.ipa to App Store Connect
+> app-store-connect publish --path /Users/builder/clone/build/ios/ipa/TiliGo.ipa
+
+Publish "/Users/builder/clone/build/ios/ipa/TiliGo.ipa" to App Store Connect
+App name: TiliGo
+Bundle identifier: com.tiligo.tilgo
+Certificate expires: 2027-06-22T14:09:18.000+0000
+Distribution type: App Store
+Min OS version: 15.0
+Provisioned devices: N/A
+Provisions all devices: No
+Supported platforms: iPhoneOS
+Version code: 1
+Version: 1.0
+
+Upload "/Users/builder/clone/build/ios/ipa/TiliGo.ipa" to App Store Connect
+Running altool at path '/Applications/Xcode-16.4.app/Contents/SharedFrameworks/ContentDeliveryServices.framework/Frameworks/AppStoreService.framework/Support/altool'...
+Running altool at path '/Applications/Xcode-16.4.app/Contents/SharedFrameworks/ContentDeliveryServices.framework/Frameworks/AppStoreService.framework/Support/altool'...
+2026-07-04 21:33:37.272 ERROR: [altool.600000590180] [ContentDelivery.Uploader.600000590180] Validation failed (409) Invalid large app icon. The large app icon in the asset catalog in “TiliGo.app” can’t be transparent or contain an alpha channel. For details, visit: https://developer.apple.com/design/human-interface-guidelines/app-icons. (ID: adb4088b-4912-4567-8fc4-2605cbc165d0)
+2026-07-04 21:33:37.273 ERROR: [altool.600000590180] [ContentDelivery.Uploader.600000590180] Validation failed (409) SDK version issue. This app was built with the iOS 18.5 SDK. All iOS and iPadOS apps must be built with the iOS 26 SDK or later, included in Xcode 26 or later, in order to be uploaded to App Store Connect or submitted for distribution. (ID: 1733d0f4-61d4-4925-b698-4ea2306537a6)
+2026-07-04 21:33:46.079  INFO: [altool.600000590180] [ContentDelivery.Uploader.600000590180] 
+=======================================
+UPLOAD FAILED with 2 errors, 0 warnings, 0 messages
+=======================================
+{"tool-version":"8.303.16303","tool-path":"\/Applications\/Xcode-16.4.app\/Contents\/SharedFrameworks\/ContentDeliveryServices.framework\/Versions\/A\/Frameworks\/AppStoreService.framework","os-version":"15.5.0","product-errors":[{"message":"Validation failed","userInfo":{"NSUnderlyingError":"Error Domain=IrisAPI Code=-19241 \"Validation failed\" UserInfo={status=409, detail=Invalid large app icon. The large app icon in the asset catalog in “TiliGo.app” can’t be transparent or contain an alpha channel. For details, visit: https:\/\/developer.apple.com\/design\/human-interface-guidelines\/app-icons., id=adb4088b-4912-4567-8fc4-2605cbc165d0, code=STATE_ERROR.VALIDATION_ERROR, title=Validation failed, NSLocalizedFailureReason=Invalid large app icon. The large app icon in the asset catalog in “TiliGo.app” can’t be transparent or contain an alpha channel. For details, visit: https:\/\/developer.apple.com\/design\/human-interface-guidelines\/app-icons., NSLocalizedDescription=Validation failed}","NSLocalizedDescription":"Validation failed","iris-code":"STATE_ERROR.VALIDATION_ERROR","NSLocalizedFailureReason":"Invalid large app icon. The large app icon in the asset catalog in “TiliGo.app” can’t be transparent or contain an alpha channel. For details, visit: https:\/\/developer.apple.com\/design\/human-interface-guidelines\/app-icons. (ID: adb4088b-4912-4567-8fc4-2605cbc165d0)"},"code":409},{"message":"Validation failed","userInfo":{"NSUnderlyingError":"Error Domain=IrisAPI Code=-19241 \"Validation failed\" UserInfo={status=409, detail=SDK version issue. This app was built with the iOS 18.5 SDK. All iOS and iPadOS apps must be built with the iOS 26 SDK or later, included in Xcode 26 or later, in order to be uploaded to App Store Connect or submitted for distribution., id=1733d0f4-61d4-4925-b698-4ea2306537a6, code=STATE_ERROR.VALIDATION_ERROR, title=Validation failed, NSLocalizedFailureReason=SDK version issue. This app was built with the iOS 18.5 SDK. All iOS and iPadOS apps must be built with the iOS 26 SDK or later, included in Xcode 26 or later, in order to be uploaded to App Store Connect or submitted for distribution., NSLocalizedDescription=Validation failed}","NSLocalizedDescription":"Validation failed","iris-code":"STATE_ERROR.VALIDATION_ERROR","NSLocalizedFailureReason":"SDK version issue. This app was built with the iOS 18.5 SDK. All iOS and iPadOS apps must be built with the iOS 26 SDK or later, included in Xcode 26 or later, in order to be uploaded to App Store Connect or submitted for distribution. (ID: 1733d0f4-61d4-4925-b698-4ea2306537a6)"},"code":409}]}
+
+
+Failed to upload archive at "/Users/builder/clone/build/ios/ipa/TiliGo.ipa":
+Validation failed
+Validation failed
+Failed to publish /Users/builder/clone/build/ios/ipa/TiliGo.ipa
+
+Failed to publish TiliGo.ipa to App Store Connect.
+
+Build failed :|
+
+
+Publishing failed :|
+Failed to publish
