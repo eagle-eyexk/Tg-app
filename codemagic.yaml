@@ -41,6 +41,11 @@ workflows:
             --scheme "$XCODE_SCHEME" \
             --config Release
 
+      - name: Upload App Store metadata and screenshots
+        script: |
+          pip install PyJWT cryptography requests -q
+          python3 "$CM_BUILD_DIR/mobile-app-swift/asc_metadata.py"
+
     artifacts:
       - build/ios/ipa/*.ipa
       - /tmp/xcodebuild_logs/*.log
@@ -49,5 +54,6 @@ workflows:
     publishing:
       app_store_connect:
         auth: integration
+        submit_to_testflight: true
         submit_to_app_store: true
         release_type: MANUAL

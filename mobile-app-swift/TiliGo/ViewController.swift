@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     private func setupSplash() {
         splashView = UIView(frame: view.bounds)
         splashView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        splashView.backgroundColor = UIColor(red: 0.08, green: 0.08, blue: 0.12, alpha: 1.0)
+        splashView.backgroundColor = UIColor.white
 
         let logo = UIImageView(image: UIImage(named: "SplashLogo"))
         logo.contentMode = .scaleAspectFit
@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         let label = UILabel()
         label.text = "TiliGo"
         label.font = UIFont.systemFont(ofSize: 28, weight: .bold)
-        label.textColor = .white
+        label.textColor = UIColor(red: 0.04, green: 0.48, blue: 1.0, alpha: 1.0)
         label.alpha = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         splashView.addSubview(label)
