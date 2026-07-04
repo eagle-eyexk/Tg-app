@@ -126,7 +126,7 @@ class ViewController: UIViewController {
         ])
 
         observation = webView.observe(\.estimatedProgress, options: .new) { [weak self] _, change in
-            guard let self, let progress = change.newValue else { return }
+            guard let self = self, let progress = change.newValue else { return }
             self.progressView.setProgress(Float(progress), animated: true)
             self.progressView.isHidden = progress >= 1.0
         }
