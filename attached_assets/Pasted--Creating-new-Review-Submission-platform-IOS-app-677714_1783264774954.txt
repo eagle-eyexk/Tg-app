@@ -1,0 +1,48 @@
+
+Creating new Review Submission: platform: IOS, app: 6777145744
+-- Review Submission (Created) --
+Id: c6631674-6327-47a2-b7ff-dca87141edb7
+Type: reviewSubmissions
+Platform: IOS
+State: READY_FOR_REVIEW
+Created Review Submission c6631674-6327-47a2-b7ff-dca87141edb7
+
+Creating new Review Submission Item: review submission: c6631674-6327-47a2-b7ff-dca87141edb7, App Store version: ab40676f-9d25-4655-a39c-64a1223e1f53
+
+Creating Review Submission Item failed. Please ensure that App Store Version Localization for your application default locale defines medical or treatment information, sexual content graphic and nudity, uses non exempt encryption, support URL, gambling, content rights declaration, advertising, parental controls, horror or fear themes, violence realistic, keywords, age assurance, violence cartoon or fantasy, mature or suggestive themes, violence realistic prolonged graphic or sadistic, gambling simulated, copyright, messaging and chat, user generated content, contests, profanity or crude humor, unrestricted web access, health or wellness topics, privacy policy URL, sexual content or nudity, loot box, description, guns or other weapons and alcohol tobacco or drug use or references!
+Failure: POST https://api.appstoreconnect.apple.com/v1/reviewSubmissionItems returned 409: appStoreVersions with id 'ab40676f-9d25-4655-a39c-64a1223e1f53' is not in valid state. - This resource cannot be reviewed, please check associated errors to see why.
+	Associated error: The provided entity is missing a required relationship - You must provide a value for the relationship 'primaryCategory' with this request
+	Associated error: The provided entity includes a relationship with an invalid value - The appStoreReviewDetail associated with appStoreVersions ab40676f-9d25-4655-a39c-64a1223e1f53 was not found.
+	Associated error: The provided entity is missing a required attribute - You must provide a value for the attribute 'copyright' with this request
+	Associated error: App screenshot missing (APP_IPAD_PRO_3GEN_129). - A screenshot with type ipadPro129 is required but was not provided
+	Associated error: App screenshot missing (APP_IPHONE_65). - A screenshot with type iphone65 is required but was not provided
+	Associated error: The provided entity is missing a required attribute - You must provide a value for the attribute 'privacyPolicyUrl' with this request
+	Associated error: The provided entity is missing a required attribute - You must provide a value for the attribute 'description' with this request
+	Associated error: The provided entity is missing a required attribute - You must provide a value for the attribute 'keywords' with this request
+	Associated error: The provided entity is missing a required attribute - You must provide a value for the attribute 'supportUrl' with this request
+	Associated error: The provided entity is missing a required attribute - You must provide a value for the attribute 'contentRightsDeclaration' with this request
+	Associated error: The provided entity is missing a required attribute - You must provide a value for the attribute 'matureOrSuggestiveThemes' with this request
+	Associated error: The provided entity is missing a required attribute - You must provide a value for the attribute 'unrestrictedWebAccess' with this request
+	Associated error: The provided entity is missing a required attribute - You must provide a value for the attribute 'alcoholTobaccoOrDrugUseOrReferences' with this request
+	Associated error: The provided entity is missing a required attribute - You must provide a value for the attribute 'gambling' with this request
+	Associated error: The provided entity is missing a required attribute - You must provide a value for the attribute 'contests' with this request
+	Associated error: The provided entity is missing a required attribute - You must provide a value for the attribute 'violenceRealistic' with this request
+	Associated error: The provided entity is missing a required attribute - You must provide a value for the attribute 'parentalControls' with this request
+	Associated error: The provided entity is missing a required attribute - You must provide a value for the attribute 'gunsOrOtherWeapons' with this request
+	Associated error: The provided entity is missing a required attribute - You must provide a value for the attribute 'medicalOrTreatmentInformation' with this request
+	Associated error: The provided entity is missing a required attribute - You must provide a value for the attribute 'violenceCartoonOrFantasy' with this request
+	Associated error: The provided entity is missing a required attribute - You must provide a value for the attribute 'healthOrWellnessTopics' with this request
+	Associated error: The provided entity is missing a required attribute - You must provide a value for the attribute 'sexualContentOrNudity' with this request
+	Associated error: The provided entity is missing a required attribute - You must provide a value for the attribute 'horrorOrFearThemes' with this request
+	Associated error: The provided entity is missing a required attribute - You must provide a value for the attribute 'ageAssurance' with this request
+	Associated error: The provided entity is missing a required attribute - You must provide a value for the attribute 'messagingAndChat' with this request
+	Associated error: The provided entity is missing a required attribute - You must provide a value for the attribute 'advertising' with this request
+	Associated error: The provided entity is missing a required attribute - You must provide a value for the attribute 'userGeneratedContent' with this request
+	Associated error: The provided entity is missing a required attribute - You must provide a value for the attribute 'profanityOrCrudeHumor' with this request
+	Associated error: The provided entity is missing a required attribute - You must provide a value for the attribute 'lootBox' with this request
+	Associated error: The provided entity is missing a required attribute - You must provide a value for the attribute 'sexualContentGraphicAndNudity' with this request
+	Associated error: The provided entity is missing a required attribute - You must provide a value for the attribute 'gamblingSimulated' with this request
+	Associated error: The provided entity is missing a required attribute - You must provide a value for the attribute 'violenceRealisticProlongedGraphicOrSadistic' with this request
+	Associated error: Answers to what data your app collects and how it's used are needed. - You must have published answers to your app's data usages.
+	Associated error: App is missing required pricing. - App is not eligible for submission until pricing has been set.
+	Associated error: The provided entity is missing a required attribute - You must provide a value for the attribute 'usesNonExemptEncryption' with this request
