@@ -7,12 +7,15 @@ class ViewController: UIViewController {
     private var progressView: UIProgressView!
     private var splashView: UIView!
     private var observation: NSKeyValueObservation?
+    private var nativeBridge: NativeBridge?
+    private var deepLinkHandler: DeepLinkHandler?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupWebView()
         setupProgressBar()
         setupSplash()
+        setupNativeBridge()
         loadSite()
     }
 
@@ -92,6 +95,30 @@ class ViewController: UIViewController {
     }
 
     // MARK: - WebView
+
+    // MARK: - Native Bridge Setup
+    
+    private func setupNativeBridge() {
+        nativeBridge = NativeBridge(webView: webView)
+        deepLinkHandler = DeepLinkHandler(nativeBridge: nativeBridge)
+    }
+    
+    // MARK: - Deep Link Handling
+    
+    func handleDeepLink(url: URL) {
+        guard deepLinkHandler != nil else { return }
+        
+        print("[ViewController] Processing deep link: \(url.absoluteString)")
+        
+        // If web view hasn't loaded yet, store the URL and process after loading
+        if webView.url == nil {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.deepLinkHandler?.handle(url: url)
+            }
+        } else {
+            deepLinkHandler?.handle(url: url)
+        }
+    }
 
     private func setupWebView() {
         let config = WKWebViewConfiguration()

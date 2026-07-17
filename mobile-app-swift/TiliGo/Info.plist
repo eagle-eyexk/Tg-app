@@ -70,5 +70,32 @@
         <string>UIStatusBarStyleDefault</string>
         <key>UIViewControllerBasedStatusBarAppearance</key>
         <true/>
+        <key>NSCameraUsageDescription</key>
+        <string>TiliGo needs access to your camera for delivery photo uploads</string>
+        <key>NSLocationWhenInUseUsageDescription</key>
+        <string>TiliGo needs access to your location for real-time delivery tracking</string>
+        <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+        <string>TiliGo needs access to your location for real-time delivery tracking</string>
+        <key>NSPhotoLibraryUsageDescription</key>
+        <string>TiliGo needs access to your photo library for uploading images</string>
+        <key>NSPhotoLibraryAddOnlyUsageDescription</key>
+        <string>TiliGo needs permission to save photos to your library</string>
+        <key>NSMicrophoneUsageDescription</key>
+        <string>TiliGo may need access to your microphone for messaging features</string>
+        <key>NSContactsUsageDescription</key>
+        <string>TiliGo needs access to your contacts for sharing delivery details</string>
+        <key>CFBundleURLTypes</key>
+        <array>
+                <dict>
+                        <key>CFBundleURLName</key>
+                        <string>com.tiligo.app</string>
+                        <key>CFBundleURLSchemes</key>
+                        <array>
+                                <string>tiligo</string>
+                        </array>
+                </dict>
+        </array>
+        <key>NSLocalNetworkUsageDescription</key>
+        <string>TiliGo needs to discover local network devices for communication</string>
 </dict>
 </plist>
